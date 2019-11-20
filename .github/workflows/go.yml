@@ -63,8 +63,7 @@ jobs:
           fi
 
       - name: Upload artifact
-      - uses: actions/checkout@master
-      - uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@master
         with:
           # Artifact name
           name: singularity-test-artifact # optional
