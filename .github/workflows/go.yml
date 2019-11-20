@@ -63,16 +63,16 @@ jobs:
           fi
 
       - name: Download artifact
-        uses: actions/download-artifact@master
-        #with:
+        uses: actions/download-artifact@v1
+        with:
           # Artifact name
-          #name: singularity-test-artifact # optional
+          name: singularity-test-artifact.zip # optional
 
       - name: Upload artifact
-        uses: actions/upload-artifact@master
-        #with:
+        uses: actions/upload-artifact@v1
+        with:
           # Artifact name
-          #name: singularity-test-artifact # optional
+          name: singularity-test-artifact.zip # optional
           # Destination path
           # path: $PWD # optional
           # artifact source
