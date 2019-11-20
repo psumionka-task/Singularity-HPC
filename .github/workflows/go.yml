@@ -64,15 +64,15 @@ jobs:
 
       - name: Download artifact
         uses: actions/download-artifact@master
-        with:
+        #with:
           # Artifact name
-          name: singularity-test-artifact # optional
+          #name: singularity-test-artifact # optional
 
       - name: Upload artifact
         uses: actions/upload-artifact@master
-        with:
+        #with:
           # Artifact name
-          name: singularity-test-artifact # optional
+          #name: singularity-test-artifact # optional
           # Destination path
           # path: $PWD # optional
           # artifact source
