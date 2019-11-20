@@ -62,14 +62,6 @@ jobs:
             ls
           fi
 
-      - name: Download artifact
-        env:
-          OUTPUT_CONTAINER: container.sif
-        uses: actions/download-artifact@v1
-        with:
-          # Artifact name
-          name: ${OUTPUT_CONTAINER} # optional
-
       - name: Upload artifact
         env:
           OUTPUT_CONTAINER: container.sif
