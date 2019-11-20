@@ -63,16 +63,20 @@ jobs:
           fi
 
       - name: Download artifact
+        env:
+          OUTPUT_CONTAINER: container.sif
         uses: actions/download-artifact@v1
         with:
           # Artifact name
-          name: singularity-test-artifact.zip # optional
+          name: ${OUTPUT_CONTAINER} # optional
 
       - name: Upload artifact
+        env:
+          OUTPUT_CONTAINER: container.sif
         uses: actions/upload-artifact@v1
         with:
           # Artifact name
-          name: singularity-test-artifact.zip # optional
+          name: ${OUTPUT_CONTAINER} # optional
           # Destination path
           # path: $PWD # optional
           # artifact source
