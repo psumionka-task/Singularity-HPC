@@ -50,9 +50,22 @@ jobs:
       run: |
        ls 
        if [ -f "${SINGULARITY_RECIPE}" ]; then
+            sudo -E singularity help
             sudo -E singularity build ${OUTPUT_CONTAINER} ${SINGULARITY_RECIPE}
+            sudo -E singularity exec ${OUTPUT_CONTAINER} cat /etc/os-release
+            sudo -E singularity run ${OUTPUT_CONTAINER}
        else
            echo "${SINGULARITY_RECIPE} is not found."
            echo "Present working directory: $PWD"
            ls
        fi
+
+    - name: Download artifact
+      uses: actions/download-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: singularity_test_artifact # optional
+        # Destination path
+        #path: # optional
+        # artifact source
+        #source: # optional, default is current
